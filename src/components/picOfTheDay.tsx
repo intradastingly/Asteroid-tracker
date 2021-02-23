@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react';
-import PicInnerBox from './PicInnerBox';
+import PicInnerBox from './PicOfTheDayBox';
 
 interface Props {
     image: string
