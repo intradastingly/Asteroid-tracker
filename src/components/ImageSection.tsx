@@ -8,12 +8,17 @@ function ImageSection() {
 
     const clickText = "Click for info";
 
-    return (
+    function clickHandler(){
+       console.log("Asteroid was clicked!")
+        
+    }
+        return (
         <div style={imageSectionStyle}>
-            <Section text={clickText} image={"./assets/galaxy.jpg"}/>
-            <Section text={clickText} image={"./assets/galaxy.jpg"}/>
-            <Section text={clickText} image={"./assets/galaxy.jpg"}/>
-            <Section text={clickText} image={"./assets/galaxy.jpg"}/>
+            <Section clickHandler={clickHandler} text={clickText} image={"./assets/galaxy.jpg"}/>
+            <Section clickHandler={clickHandler} text={clickText} image={"./assets/galaxy.jpg"}/>
+            <Section clickHandler={clickHandler} text={clickText} image={"./assets/galaxy.jpg"}/>
+            <Section clickHandler={clickHandler} text={clickText} image={"./assets/galaxy.jpg"}/>
+           
         </div>
     )
 }
@@ -25,6 +30,7 @@ const imageSectionStyle: CSSProperties = {
     overflow: 'visible',
     whiteSpace: 'nowrap',
     alignItems: "center",
+    flex: "1",
     
 }
 

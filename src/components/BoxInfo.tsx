@@ -16,7 +16,7 @@ const rootStyle: CSSProperties = {
 }
 
 const pStyle: CSSProperties = {
-    width: '20rem',
+    width: '70%',
     color: 'white'
 }
 

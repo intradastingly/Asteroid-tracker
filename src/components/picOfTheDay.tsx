@@ -25,7 +25,7 @@ const imageStyle: CSSProperties = {
     margin: 'auto',
     width: '100%',
     objectFit: 'cover',
-    height: '25rem'  
+    height: '40rem'  
 }
 
 export default PicOfTheDay;

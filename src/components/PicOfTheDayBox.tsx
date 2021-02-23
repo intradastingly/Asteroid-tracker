@@ -20,8 +20,8 @@ const rootStyle: CSSProperties = {
     position: 'absolute',
     background: 'rgba(255, 255, 255, 0.3)',
     borderRadius: '1.5rem',
-    width: '80%',
-    height: '80%',
+    width: '70%',
+    height: '70%'
 }
 
 export default PicInnerBox;

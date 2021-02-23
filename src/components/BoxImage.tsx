@@ -9,8 +9,9 @@ function BoxImage() {
 }
 
 const imgStyle: CSSProperties = {
-    height: '16rem',
-    width: '25rem'
+    paddingLeft: '18%',
+    height: '80%',
+    width: '80%'
 }
 
 export default BoxImage;
