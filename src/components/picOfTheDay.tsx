@@ -2,7 +2,7 @@ import React, { CSSProperties } from 'react';
 import PicInnerBox from './PicOfTheDayBox';
 
 interface Props {
-    image: string
+    image: any
 }
 
 function PicOfTheDay(props:Props) {
