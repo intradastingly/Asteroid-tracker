@@ -10,22 +10,27 @@ interface Props {
 }
 
 interface State {
-    photos: []
+    drinks: []
 }
 
 class MasterView extends Component<Props,State> {
 
     state: State = {
-        photos: []
+        drinks: []
     }
 
     COCKTAILS_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
 
-    async componentDidMount() {
+
+    handleInput = (value: string) => {
+        this.fetchDataFromApi(value);
+    }
+
+    async fetchDataFromApi(searchValue: string) {
         try {
-            fetch(this.COCKTAILS_URL + "margarita")
+            fetch(this.COCKTAILS_URL + searchValue)
                 .then(response => response.json())
-                .then(photoData => this.setState({photos: photoData}))
+                .then(drinks => this.setState({drinks}))
         } catch (error) {
             console.log(error);
         }
@@ -39,11 +44,11 @@ class MasterView extends Component<Props,State> {
         console.log("RANDOM DRINK")
     }
     render() {
-        console.log(this.state.photos)
+        console.log(this.state)
         return (
             <div style={rootStyle}>
                 <StartPageImage />
-                <SearchBar />
+                <SearchBar onChange={this.handleInput}/>
                 <div style={buttonFlex}>
                     <Link to="/Search">
                         <Buttons text="Search" handleClick={this.somethingHappens}/>

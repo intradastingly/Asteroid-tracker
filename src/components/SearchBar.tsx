@@ -1,15 +1,38 @@
-import React, { CSSProperties } from "react";
+import React, { ChangeEvent, Component, CSSProperties } from "react";
+
+interface Props{
+    onChange: (value: string) => void;
+}
+interface State{
+    value:string;
+}
 
 
+class SearchBar extends Component<Props,State>  {
 
-function SearchBar() {
+    state:State = {
+        value: ''
+    }
 
-    return (
-        <input 
-            style={searchBox}
-            placeholder="Search"
-        />
-    );
+    handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        this.setState({value: event.target.value})
+    }
+
+    componentDidUpdate(){
+        const {onChange} = this.props;
+        onChange(this.state.value);
+    }
+
+    render() {
+        return (
+            <input 
+                style={searchBox}
+                placeholder="Search"
+                value={this.state.value}
+                onChange={this.handleChange}
+            />
+        );
+    }
 }
 
 const searchBox: CSSProperties = {
