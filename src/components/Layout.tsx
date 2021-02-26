@@ -8,6 +8,7 @@ function Layout() {
         <div style={rootStyle}>
             <Header />
             <Content />
+            
         </div>
     )
 }
@@ -16,9 +17,9 @@ function Layout() {
 const rootStyle: CSSProperties = {
     display: "flex",
     flexDirection: "column",
-    background: 'grey',
-    margin: "0",
-    minWidth: '100%',
+    background: '#F5FFC6',
+    width: "100%",
+    height: "100%"
 }
 
 export default Layout;
