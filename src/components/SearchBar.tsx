@@ -13,7 +13,7 @@ function SearchBar() {
 }
 
 const searchBox: CSSProperties = {
-    width: 'auto',
+    width: '12rem',
     borderRadius: '3rem',
     background: 'white',
     padding: '.5rem',
