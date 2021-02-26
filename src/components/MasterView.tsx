@@ -2,15 +2,18 @@ import React, {Component, CSSProperties} from 'react';
 import SearchBar from './SearchBar';
 import StartPageImage from "./startPageImage";
 import Buttons from "./buttons";
+import { Link } from "react-router-dom"
 
 
 interface Props {
 
 }
+
 interface State {
     drinks: []
 }
-class Content extends Component<Props,State> {
+
+class MasterView extends Component<Props,State> {
 
     state: State = {
         drinks: []
@@ -47,8 +50,12 @@ class Content extends Component<Props,State> {
                 <StartPageImage />
                 <SearchBar onChange={this.handleInput}/>
                 <div style={buttonFlex}>
-                    <Buttons text="Search" handleClick={this.somethingHappens}/>
-                    <Buttons text="Random" handleClick={this.somethingElseHappens}/>
+                    <Link to="/Search">
+                        <Buttons text="Search" handleClick={this.somethingHappens}/>
+                    </Link>
+                    <Link to="/Random">
+                        <Buttons text="Random" handleClick={this.somethingElseHappens}/>
+                    </Link>
                 </div>
             </div>
         )  
@@ -69,4 +76,4 @@ const buttonFlex: CSSProperties = {
 
    
 }
-export default Content;
+export default MasterView;

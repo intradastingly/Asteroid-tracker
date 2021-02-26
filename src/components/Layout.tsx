@@ -1,14 +1,33 @@
 import React, {CSSProperties} from 'react';
+import DetailView from './DetailView';
+import MasterView from './MasterView';
 import Header from './Header';
-import Content from "./Content";
+import { Route, Switch } from 'react-router-dom';
+
 
 
 function Layout() { 
+
+    // api image
+    const image = "../assets/drink.png";
+
+    //api drink title
+    const drinkTitle = 'Bloody Mary'  
+
+    // api drink recipe
+    const drinkRecipe = "Only alcohol in this drink"
     return (
         <div style={rootStyle}>
-            <Header />
-            <Content />
-            
+                <Header />
+            <Switch>
+                <Route exact path="/" component={MasterView}/>
+                <Route path="/Search">
+                    <DetailView image={image} drinkTitle={drinkTitle} drinkRecipe={drinkRecipe}/>
+                </Route>
+                <Route path="/Random">
+                    <DetailView image={image} drinkTitle={drinkTitle} drinkRecipe={drinkRecipe}/>
+                </Route>
+            </Switch>
         </div>
     )
 }
