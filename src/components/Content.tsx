@@ -8,20 +8,16 @@ interface Props {
   
 }
 interface State {
-    photo: []
+    image: string
 }
 class Content extends Component<Props,State> {
 
-    constructor(props: Props) {
-        super(props);
-    }
-
     state: State = {
-        photo: []
+        image: ""
     }
 
-    private readonly API_KEY = 'NW1Na7xNlbyBru0G2316TY2b2wkLoDTj2LvXJzq6';
-    private readonly NASA_URL = 'https://images-api.nasa.gov/search?q=';
+    //private readonly API_KEY = 'NW1Na7xNlbyBru0G2316TY2b2wkLoDTj2LvXJzq6';
+    //private readonly NASA_URL = 'https://api.nasa.gov/planetary/apod?api_key=';
 
     async componentDidMount() {
         try {
