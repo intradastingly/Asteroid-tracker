@@ -45,7 +45,7 @@ class Content extends Component<Props,State> {
         return (
             <div style={rootStyle}>
                 <StartPageImage />
-                <SearchBar />
+                <SearchBar onChange={this.handleInput}/>
                 <div style={buttonFlex}>
                     <Buttons text="Search" handleClick={this.somethingHappens}/>
                     <Buttons text="Random" handleClick={this.somethingElseHappens}/>
