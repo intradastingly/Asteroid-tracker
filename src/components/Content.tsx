@@ -1,37 +1,34 @@
 import React, {Component, CSSProperties} from 'react'
-import PicOfTheDay from './picOfTheDay';
-import ImageSection from './ImageSection';
-
-
-
 interface Props {
-  
+
 }
 interface State {
-    image: string
+    photos: []
 }
 class Content extends Component<Props,State> {
 
     state: State = {
-        image: ""
+        photos: []
     }
 
-    //private readonly API_KEY = 'NW1Na7xNlbyBru0G2316TY2b2wkLoDTj2LvXJzq6';
-    //private readonly NASA_URL = 'https://api.nasa.gov/planetary/apod?api_key=';
+    private readonly API_KEY = '1';
+    private readonly COCKTAILS_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s';
 
     async componentDidMount() {
         try {
-
+            fetch(this.COCKTAILS_URL + this.API_KEY)
+                .then(response => response.json())
+                .then(photoData => this.setState({photos: photoData}))
         } catch (error) {
             console.log(error);
         }
     }
 
     render() {
+        console.log(this.state.photos)
         return (
             <div style={rootStyle}>
-                <PicOfTheDay image={'./assets/galaxy.jpg'}/>
-                <ImageSection />
+                hej
             </div>
         )  
     }
@@ -40,7 +37,6 @@ class Content extends Component<Props,State> {
 
 const rootStyle: CSSProperties = {
     display: "flex",
-    flexDirection: "column",
-    flex: "1",
+   
 }
 export default Content;
