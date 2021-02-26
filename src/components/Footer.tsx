@@ -4,7 +4,7 @@ import React, { CSSProperties } from "react";
 
 function Footer(){
     return(
-        <p style={rootStyle}>@COPYRIGHT ANTON ASAF GUSTAV</p>
+        <p style={rootStyle}>@COPYRIGHT ANTON ASAF GUSTAV CAMILLA</p>
     );
 }
 
