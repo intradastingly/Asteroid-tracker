@@ -12,6 +12,7 @@ function Header() {
 const headerStyle: CSSProperties = {
     display: 'flex',
     height: '5rem',
+    minWidth: "100%",
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
