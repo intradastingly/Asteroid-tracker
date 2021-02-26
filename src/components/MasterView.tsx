@@ -6,35 +6,21 @@ import { Link } from "react-router-dom"
 
 
 interface Props {
-
+    onChange: (value:string)  => void;
 }
-
 interface State {
-    drinks: []
+    searchValue: string;
 }
 
-class MasterView extends Component<Props,State> {
+// handleNewSearchValue = (value: string) => {
+//     this.setState({ searchValue: value });
+//   };
+  
+  class MasterView extends Component<Props,State> {
 
     state: State = {
-        drinks: []
-    }
-
-    COCKTAILS_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
-
-
-    handleInput = (value: string) => {
-        this.fetchDataFromApi(value);
-    }
-
-    async fetchDataFromApi(searchValue: string) {
-        try {
-            fetch(this.COCKTAILS_URL + searchValue)
-                .then(response => response.json())
-                .then(drinks => this.setState({drinks}))
-        } catch (error) {
-            console.log(error);
-        }
-    }
+        searchValue: ''
+      }
 
     somethingHappens() {
         console.log('SEARCH FOR DRINK')
@@ -43,12 +29,20 @@ class MasterView extends Component<Props,State> {
     somethingElseHappens(){
         console.log("RANDOM DRINK")
     }
+
+    getValue = (value: string) => {
+        // this.setState({ searchValue: value })
+        // const {onChange} = this.props
+        // onChange(this.state.searchValue)
+        //console.log(value)
+        this.props.parentCallback(value)
+    }
+ 
     render() {
-        console.log(this.state)
         return (
             <div style={rootStyle}>
                 <StartPageImage />
-                <SearchBar onChange={this.handleInput}/>
+                <SearchBar value={this.getValue}/>
                 <div style={buttonFlex}>
                     <Link to="/Search">
                         <Buttons text="Search" handleClick={this.somethingHappens}/>
