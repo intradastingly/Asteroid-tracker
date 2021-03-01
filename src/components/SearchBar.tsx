@@ -1,5 +1,4 @@
 import React, { ChangeEvent, Component, CSSProperties } from "react";
-
 interface Props{
     value: (value: string) => void;
 }

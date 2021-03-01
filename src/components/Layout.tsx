@@ -1,37 +1,43 @@
-import React, {CSSProperties} from 'react';
+import React, {Component, CSSProperties} from 'react';
 import DetailView from './DetailView';
 import MasterView from './MasterView';
 import Header from './Header';
 import { Route, Switch } from 'react-router-dom';
 
 
+class Layout extends Component { 
 
-function Layout() { 
+    image = "../assets/drink.png";
+    drinkTitle = 'Bloody Mary'  
+    drinkRecipe = "Only alcohol in this drink"
 
-    // api image
-    const image = "../assets/drink.png";
+    getSearchResult(value: string){
+        console.log(value)
+    }
 
-    //api drink title
-    const drinkTitle = 'Bloody Mary'  
-
-    // api drink recipe
-    const drinkRecipe = "Only alcohol in this drink"
-    return (
-        <div style={rootStyle}>
-                <Header />
-            <Switch>
-                <Route exact path="/" component={MasterView}/>
-                <Route path="/Search">
-                    <DetailView image={image} drinkTitle={drinkTitle} drinkRecipe={drinkRecipe}/>
-                </Route>
-                <Route path="/Random">
-                    <DetailView image={image} drinkTitle={drinkTitle} drinkRecipe={drinkRecipe}/>
-                </Route>
-            </Switch>
-        </div>
-    )
+    render() {
+        return (
+            <div style={rootStyle}>
+                    <Header />
+                    <Switch>
+                        <Context.Provider value={this.getSearchResult}>
+                            <Route exact path="/" component={MasterView}/>
+                        </Context.Provider>
+                        <Route path="/Search">
+                            <DetailView image={this.image} drinkTitle={this.drinkTitle} drinkRecipe={this.drinkRecipe}/>
+                        </Route>
+                        <Route path="/Random">
+                            <DetailView image={this.image} drinkTitle={this.drinkTitle} drinkRecipe={this.drinkRecipe}/>
+                        </Route>
+                    </Switch>
+            </div>
+        )
+    }      
 }
 
+
+const Context = React.createContext('default');
+export Context; 
 
 const rootStyle: CSSProperties = {
     display: "flex",
