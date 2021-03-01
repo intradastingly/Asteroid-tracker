@@ -6,11 +6,15 @@ import { Route, Switch } from 'react-router-dom';
 
 
 
-interface State {}
+interface State {
+    //searchValue: string;
+    drinks: [];
+}
 interface Props {}
 class Layout extends Component<Props,State> { 
     state: State = {
-        searchValue: ''
+        //searchValue: '',
+        drinks: []
     }
 
     image = "../assets/drink.png";
@@ -18,7 +22,7 @@ class Layout extends Component<Props,State> {
     drinkRecipe = "Only alcohol in this drink"
     COCKTAILS_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
 
-    async fetchDataFromApi(searchValue: string) {
+    /* async fetchDataFromApi(searchValue: string) {
         try {
             fetch(this.COCKTAILS_URL + searchValue)
                 .then(response => response.json())
@@ -26,10 +30,34 @@ class Layout extends Component<Props,State> {
         } catch (error) {
             console.log(error);
         }
-    }
+    } */
 
+        // Generates random drink when random button is clicked
+
+    async getRandomCocktail() {
+            fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+            .then(
+                function(response) {
+                    if (response.status !== 200) {
+                        console.log('Looks like there was a problem. Status Code: ' +
+                        response.status);
+                        return;
+                    }
+                    response.json().then(function(data) {
+                        console.log(data.drinks[0].strDrink);
+                        console.log(data.drinks);
+                    })
+                }
+            )
+            .catch(function(err) {
+                console.log('Fetch Error : S' , err)
+            })
+        }
+    
     handleSearchResult(value: string){
-        this.setState({searchValue: value});
+        //this.setState({searchValue: value});
+        this.getRandomCocktail()
+        console.log(value)
     }
 
     render() {
