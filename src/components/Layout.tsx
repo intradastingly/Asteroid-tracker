@@ -5,14 +5,31 @@ import Header from './Header';
 import { Route, Switch } from 'react-router-dom';
 
 
-class Layout extends Component { 
+
+interface State {}
+interface Props {}
+class Layout extends Component<Props,State> { 
+    state: State = {
+        searchValue: ''
+    }
 
     image = "../assets/drink.png";
     drinkTitle = 'Bloody Mary'  
     drinkRecipe = "Only alcohol in this drink"
+    COCKTAILS_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
 
-    getSearchResult(value: string){
-        console.log(value)
+    async fetchDataFromApi(searchValue: string) {
+        try {
+            fetch(this.COCKTAILS_URL + searchValue)
+                .then(response => response.json())
+                .then(drinks => this.setState({drinks}))
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    handleSearchResult(value: string){
+        this.setState({searchValue: value});
     }
 
     render() {
@@ -20,9 +37,9 @@ class Layout extends Component {
             <div style={rootStyle}>
                     <Header />
                     <Switch>
-                        <Context.Provider value={this.getSearchResult}>
-                            <Route exact path="/" component={MasterView}/>
-                        </Context.Provider>
+                        <Route exact path="/">
+                            <MasterView updateSearch={this.handleSearchResult}/>
+                        </Route>  
                         <Route path="/Search">
                             <DetailView image={this.image} drinkTitle={this.drinkTitle} drinkRecipe={this.drinkRecipe}/>
                         </Route>
@@ -36,8 +53,8 @@ class Layout extends Component {
 }
 
 
-const Context = React.createContext('default');
-export Context; 
+
+
 
 const rootStyle: CSSProperties = {
     display: "flex",
@@ -47,4 +64,5 @@ const rootStyle: CSSProperties = {
     height: "100%"
 }
 
+export const Context = React.createContext('default');
 export default Layout;

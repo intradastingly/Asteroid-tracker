@@ -1,14 +1,11 @@
-import React, { ChangeEvent, Component, CSSProperties } from "react";
+import React, { ChangeEvent, Component, CSSProperties} from "react";
 interface Props{
-    value: (value: string) => void;
+    onChange: (value: string) => void;
 }
 interface State{
     value:string;
 }
-
-
 class SearchBar extends Component<Props,State>  {
-
     state:State = {
         value: ''
     }
@@ -18,8 +15,8 @@ class SearchBar extends Component<Props,State>  {
     }
 
     componentDidUpdate(){
-        const {value} = this.props;
-        value(this.state.value);
+        const {onChange} = this.props;
+        onChange(this.state.value);
     }
 
     render() {
@@ -33,6 +30,7 @@ class SearchBar extends Component<Props,State>  {
         );
     }
 }
+
 
 const searchBox: CSSProperties = {
     width: '12rem',
