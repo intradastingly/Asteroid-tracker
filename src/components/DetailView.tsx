@@ -17,7 +17,7 @@ function somethingHappens(){
 }
     
 
-    return (
+return (
         <div style={rootStyle}>
             <img style={imageStyle} src={props.image} alt=""/>
              <h2 >{props.drinkTitle}</h2>
