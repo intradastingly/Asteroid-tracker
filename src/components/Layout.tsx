@@ -1,4 +1,4 @@
-import React, {CSSProperties} from 'react';
+import React, {Component, CSSProperties} from 'react';
 import DetailView from './DetailView';
 import MasterView from './MasterView';
 import Header from './Header';
@@ -6,32 +6,45 @@ import { Route, Switch } from 'react-router-dom';
 
 
 
-function Layout() { 
-
-    // api image
-    const image = "../assets/drink.png";
-
-    //api drink title
-    const drinkTitle = 'Bloody Mary'  
-
-    // api drink recipe
-    const drinkRecipe = "Only alcohol in this drink"
-    return (
-        <div style={rootStyle}>
-                <Header />
-            <Switch>
-                <Route exact path="/" component={MasterView}/>
-                <Route path="/Search">
-                    <DetailView image={image} drinkTitle={drinkTitle} drinkRecipe={drinkRecipe}/>
-                </Route>
-                <Route path="/Random">
-                    <DetailView image={image} drinkTitle={drinkTitle} drinkRecipe={drinkRecipe}/>
-                </Route>
-            </Switch>
-        </div>
-    )
+interface State {
+    drink: any[]
 }
+interface Props {}
 
+
+class Layout extends Component<Props,State> { 
+    state: State = {
+        drink: []
+    }
+   
+    image = "../assets/drink.png";
+    drinkTitle = 'Bloody Mary'  
+    drinkRecipe = "Only alcohol in this drink"
+
+    displayDrink = (value: []) => {
+        this.setState({drink: value});
+    }
+
+    render() {
+        console.log(this.state)
+        return (
+            <div style={rootStyle}>
+                <Header />
+                <Switch>
+                    <Route exact path="/">
+                        <MasterView drink={this.state.drink} onSearchDrink={this.displayDrink}/>
+                    </Route>  
+                    <Route path="/search">
+                        <DetailView image={this.image} drinkTitle={this.drinkTitle} drinkRecipe={this.drinkRecipe}/>
+                    </Route>
+                    <Route path="/random">
+                        <DetailView image={this.image} drinkTitle={this.drinkTitle} drinkRecipe={this.drinkRecipe}/>
+                    </Route>
+                </Switch>
+            </div>
+        )
+    }      
+}
 
 const rootStyle: CSSProperties = {
     display: "flex",
