@@ -34,8 +34,8 @@ interface State {
         // this.setState({ searchValue: value })
         // const {onChange} = this.props
         // onChange(this.state.searchValue)
-        //console.log(value)
-        this.props.parentCallback(value)
+        console.log(value)
+        //this.props.parentCallback(value)
     }
  
     render() {

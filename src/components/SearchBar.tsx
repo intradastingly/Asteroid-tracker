@@ -1,7 +1,7 @@
 import React, { ChangeEvent, Component, CSSProperties } from "react";
 
 interface Props{
-    onChange: (value: string) => void;
+    value: (value: string) => void;
 }
 interface State{
     value:string;
@@ -19,8 +19,8 @@ class SearchBar extends Component<Props,State>  {
     }
 
     componentDidUpdate(){
-        const {onChange} = this.props;
-        onChange(this.state.value);
+        const {value} = this.props;
+        value(this.state.value);
     }
 
     render() {
