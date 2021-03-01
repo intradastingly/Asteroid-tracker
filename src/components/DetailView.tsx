@@ -2,8 +2,6 @@
 import React, { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import Buttons from './buttons';
-
-
 interface Props {
     image: string,
     drinkTitle: string,
@@ -16,7 +14,6 @@ function somethingHappens(){
     //route back to master view
 }
     
-
 return (
         <div style={rootStyle}>
             <img style={imageStyle} src={props.image} alt=""/>

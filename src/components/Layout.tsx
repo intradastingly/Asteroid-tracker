@@ -3,9 +3,6 @@ import DetailView from './DetailView';
 import MasterView from './MasterView';
 import Header from './Header';
 import { Route, Switch } from 'react-router-dom';
-
-
-
 interface State {
     drink: any[]
 }
