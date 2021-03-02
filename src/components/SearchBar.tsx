@@ -2,6 +2,7 @@ import React, { ChangeEvent, Component, CSSProperties} from "react";
 interface Props{
     value: string;
     onChange: (value: string) => void;
+    dropDownList: any[];
 }
 interface State {}
 class SearchBar extends Component<Props,State>  {
@@ -11,24 +12,35 @@ class SearchBar extends Component<Props,State>  {
     }
 
     render() {
+        const dropDownList = this.props.dropDownList;
         return (
-            <input 
-                style={searchBox}
-                placeholder="Search"
-                value={this.props.value}
-                onChange={this.handleChange}
-            />
+            <div>
+                <input 
+                    list="listid"
+                    style={searchBox}
+                    placeholder="Drink"
+                    value={this.props.value}
+                    onChange={this.handleChange}
+                />
+                <datalist id='listid'>
+                    {dropDownList.map((list) => (
+                        <option label={list.strDrink} value={list.strDrink}/>
+                    ))}
+                </datalist>
+            </div>
         );
     }
 }
 
-
 const searchBox: CSSProperties = {
-    width: '12rem',
-    borderRadius: '3rem',
+    width: '16rem',
+    height: '1.5rem',
     background: 'white',
     padding: '.5rem',
-    outline: "none",
+    fontSize: '1.5rem',
+    border: 'none',
+    backgroundImage:'none',
+    boxShadow: 'none',
 }
 
 export default SearchBar;

@@ -4,7 +4,7 @@ import React, { CSSProperties } from "react";
 function Header() {
     return (
         <div style={headerStyle}>
-            <h1>DRINK HELPER</h1>
+            <h1>HANGOVER CURES</h1>
         </div>
     )
 }
@@ -16,7 +16,7 @@ const headerStyle: CSSProperties = {
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
-    background: '#AB87FF',
+    background: '#6d0000',
     color: 'white',
 }
 
