@@ -3,23 +3,37 @@ import React, { CSSProperties } from "react";
 
 
 interface Props {
-    image: any,
-    drinkTitle: any,
-    drinkRecipe: any,
+    image: string,
+    drinkTitle: string,
+    drinkRecipe: string,
+    ingredients1: string,
+    ingredients2: string,
+    ingredients3: string,
+    ingredients4: string,
+    ingredients5: string
+
 }
 
 function DetailView(props: Props) {
 
-
-return (
-        <div style={rootStyle}>
-            <img style={imageStyle} src={props.image} alt=""/>
-             <h2 style={drinkStyleTitle}>{props.drinkTitle}</h2>
-             <p style={drinkStyleRecipe}>{props.drinkRecipe}</p>
-        </div>
-    );
-
+        return (
+            <div style={rootStyle}>
+                <img style={imageStyle} src={props.image} alt="" />
+                <h2 >{props.drinkTitle}</h2>
+                <p>{props.drinkRecipe}</p>
+                <h3>Ingredients</h3>
+                    <p>{props.ingredients1}</p>
+                    <p>{props.ingredients2}</p>
+                    <p>{props.ingredients3}</p>
+                    <p>{props.ingredients4}</p>
+                    <p>{props.ingredients5}</p>
+                <
+            </div>
+        );
 }
+
+
+
 
 const rootStyle: CSSProperties = {
     display: 'flex',
