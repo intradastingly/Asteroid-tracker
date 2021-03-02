@@ -5,9 +5,9 @@ import Buttons from './buttons';
 
 
 interface Props {
-    image: string,
-    drinkTitle: string,
-    drinkRecipe: string,
+    image: any,
+    drinkTitle: any,
+    drinkRecipe: any,
 }
 
 function DetailView(props: Props) {

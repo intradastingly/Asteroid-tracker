@@ -3,30 +3,28 @@ import DetailView from './DetailView';
 import MasterView from './MasterView';
 import Header from './Header';
 import { Route, Switch } from 'react-router-dom';
+// import { Drinks } from './MasterView'
 
 
 
 interface State {
-    drink: any[]
+    drink: any[],
 }
+
 interface Props {}
-
-
 class Layout extends Component<Props,State> { 
     state: State = {
-        drink: []
+        drink: [],
+
     }
-   
-    image = "../assets/drink.png";
-    drinkTitle = 'Bloody Mary'  
-    drinkRecipe = "Only alcohol in this drink"
 
     displayDrink = (value: []) => {
         this.setState({drink: value});
     }
 
     render() {
-        console.log(this.state)
+        const drinkMap = this.state.drink;
+        console.log(drinkMap)
         return (
             <div style={rootStyle}>
                 <Header />
@@ -35,10 +33,13 @@ class Layout extends Component<Props,State> {
                         <MasterView drink={this.state.drink} onSearchDrink={this.displayDrink}/>
                     </Route>  
                     <Route path="/search">
-                        <DetailView image={this.image} drinkTitle={this.drinkTitle} drinkRecipe={this.drinkRecipe}/>
-                    </Route>
-                    <Route path="/random">
-                        <DetailView image={this.image} drinkTitle={this.drinkTitle} drinkRecipe={this.drinkRecipe}/>
+                        {drinkMap.map((data)=> (
+                            <DetailView 
+                                image={data.strDrinkThumb + "/preview"} 
+                                drinkTitle={data.strDrink} 
+                                drinkRecipe={data.strInstructions} 
+                            />
+                        ))}
                     </Route>
                 </Switch>
             </div>
