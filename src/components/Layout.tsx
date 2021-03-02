@@ -3,26 +3,30 @@ import DetailView from './DetailView';
 import MasterView from './MasterView';
 import Header from './Header';
 import { Route, Switch } from 'react-router-dom';
+
 import ErrorBoundary from './errorBoundary';
 
 
 
 
+
 interface State {
-    drink: any[]
+    drink: any[],
 }
+
 interface Props {}
-
-
 class Layout extends Component<Props,State> { 
     state: State = {
-        drink: []
+        drink: [],
+
     }
+
    
 
     image = "../assets/drink.png";
     drinkTitle = 'Bloody Mary'  
     drinkRecipe = "Only alcohol in this drink"
+
 
     displayDrink = (value: []) => {
         this.setState({drink: value});
@@ -30,11 +34,8 @@ class Layout extends Component<Props,State> {
  
 
     render() {
-        console.log(this.state)
-        // if(this.drinkTitle) {
-        //     const nullbull: any = null;
-        //     console.log(nullbull.azaz)
-        // }
+
+        const drinkMap = this.state.drink;
         return (
             <div style={rootStyle}>
                 <Header />
@@ -45,6 +46,15 @@ class Layout extends Component<Props,State> {
                         </ErrorBoundary>
                     </Route>  
                     <Route path="/search">
+
+                        {drinkMap.map((data)=> (
+                            <DetailView 
+                                image={data.strDrinkThumb + "/preview"} 
+                                drinkTitle={data.strDrink} 
+                                drinkRecipe={data.strInstructions} 
+                            />
+                        ))}
+
                         <ErrorBoundary>
                             <DetailView image={this.image} drinkTitle={this.drinkTitle} drinkRecipe={this.drinkRecipe}/>
                         </ErrorBoundary>
@@ -53,6 +63,7 @@ class Layout extends Component<Props,State> {
                         <ErrorBoundary>
                             <DetailView image={this.image} drinkTitle={this.drinkTitle} drinkRecipe={this.drinkRecipe}/>
                         </ErrorBoundary>
+
                     </Route>
                 </Switch>
             </div>
