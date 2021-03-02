@@ -5,31 +5,41 @@ import Buttons from './buttons';
 
 
 interface Props {
-    image: any,
-    drinkTitle: any,
-    drinkRecipe: any,
+    image: string,
+    drinkTitle: string,
+    drinkRecipe: string,
+    ingredients1: string,
+    ingredients2: string,
+    ingredients3: string,
+    ingredients4: string,
+    ingredients5: string
+
 }
 
 function DetailView(props: Props) {
 
-function somethingHappens(){
-    //route back to master view
+    function somethingHappens() {
+        //route back to master view
+    }
+  
+        return (
+            <div style={rootStyle}>
+                <img style={imageStyle} src={props.image} alt="" />
+                <h2 >{props.drinkTitle}</h2>
+                <p>{props.drinkRecipe}</p>
+                <h3>Ingredients</h3>
+                    <p>{props.ingredients1}</p>
+                    <p>{props.ingredients2}</p>
+                    <p>{props.ingredients3}</p>
+                    <p>{props.ingredients4}</p>
+                    <p>{props.ingredients5}</p>
+                <Link to="/">
+                    <Buttons text="Back" handleClick={somethingHappens} />
+                </Link>
+            </div>
+        );
 }
-    // test error boundry
-    // const haha: any = null
-    // console.log(haha.lol)
-return (
-        <div style={rootStyle}>
-            <img style={imageStyle} src={props.image} alt=""/>
-             <h2 >{props.drinkTitle}</h2>
-             <p>{props.drinkRecipe}</p>
-             <Link to="/">
-                 <Buttons text="Back" handleClick={somethingHappens}/>
-             </Link>
-        </div>
-    );
 
-}
 
 const rootStyle: CSSProperties = {
     display: 'flex',
@@ -41,7 +51,7 @@ const rootStyle: CSSProperties = {
 }
 
 const imageStyle: CSSProperties = {
-    maxWidth: "10rem",
+                    maxWidth: "10rem",
     borderRadius: "2rem",
     margin: "2rem 0",
 }

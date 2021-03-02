@@ -22,7 +22,7 @@ class SearchBar extends Component<Props,State>  {
                     value={this.props.value}
                     onChange={this.handleChange}
                 />
-                <datalist id='listid'>
+                <datalist id='listid' style={dropDownListStyle}>
                     {dropDownList.map((list) => (
                         <option label={list.strDrink} value={list.strDrink}/>
                     ))}
@@ -41,6 +41,10 @@ const searchBox: CSSProperties = {
     border: 'none',
     backgroundImage:'none',
     boxShadow: 'none',
+}
+
+const dropDownListStyle: CSSProperties = {
+    position: 'fixed'
 }
 
 export default SearchBar;
