@@ -40,14 +40,13 @@ class MasterView extends Component<Props, State> {
     }
 
     render() {
-        console.log(this.props.drink)
         return (
             <div style={rootStyle}>
                 <StartPageImage />
                 <SearchBar 
                     value={this.state.searchValue} 
                     onChange={this.handleSearchResult}
-                    
+                    dropDownList={this.props.drink}
                 />
                 <div style={buttonFlex}>
                     <Link to="/search">

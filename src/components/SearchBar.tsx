@@ -2,6 +2,7 @@ import React, { ChangeEvent, Component, CSSProperties} from "react";
 interface Props{
     value: string;
     onChange: (value: string) => void;
+    dropDownList: any[];
 }
 interface State {}
 class SearchBar extends Component<Props,State>  {
@@ -11,13 +12,23 @@ class SearchBar extends Component<Props,State>  {
     }
 
     render() {
+        const dropDownList = this.props.dropDownList;
+        console.log(dropDownList[0])
         return (
-            <input 
-                style={searchBox}
-                placeholder="Search"
-                value={this.props.value}
-                onChange={this.handleChange}
-            />
+            <div>
+                <input 
+                    list="listid"
+                    style={searchBox}
+                    placeholder="Search"
+                    value={this.props.value}
+                    onChange={this.handleChange}
+                />
+                <datalist id='listid'>
+                    {dropDownList.map((list) => (
+                        <option label={list.strDrink} value={list.strDrink}/>
+                    ))}
+                </datalist>
+            </div>
         );
     }
 }
