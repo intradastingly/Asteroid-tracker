@@ -1,6 +1,7 @@
 import React, { CSSProperties } from "react";
 
 
+
 function Header() {
     return (
         <div style={headerStyle}>
@@ -18,6 +19,7 @@ const headerStyle: CSSProperties = {
     textAlign: 'center',
     background: '#6d0000',
     color: 'white',
+    fontFamily: 'Shadows Into Light'
 }
 
 

@@ -2,9 +2,10 @@ import React, {Component, CSSProperties} from 'react';
 import DetailView from './DetailView';
 import MasterView from './MasterView';
 import Header from './Header';
-import { Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 
 import ErrorBoundary from './errorBoundary';
+import Buttons from './buttons';
 
 
 
@@ -21,17 +22,15 @@ class Layout extends Component<Props,State> {
 
     }
 
-   
-
-    image = "../assets/drink.png";
-    drinkTitle = 'Bloody Mary'  
-    drinkRecipe = "Only alcohol in this drink"
 
 
     displayDrink = (value: []) => {
         this.setState({drink: value});
     }
  
+    somethingHappens(){
+
+    }
 
     render() {
 
@@ -46,37 +45,54 @@ class Layout extends Component<Props,State> {
                         </ErrorBoundary>
                     </Route>  
                     <Route path="/search">
+                        
 
+                        <div style={backButtonStyle}>
+                            <Link to="/">
+                                <Buttons text="Back" handleClick={this.somethingHappens}/>
+                            </Link>
+                        </div>
+                        <div style={drinkGridStyle}>
                         {drinkMap.map((data)=> (
-                            <DetailView 
-                                image={data.strDrinkThumb + "/preview"} 
-                                drinkTitle={data.strDrink} 
-                                drinkRecipe={data.strInstructions} 
-                            />
-                        ))}
-
-                        <ErrorBoundary>
-                            <DetailView image={this.image} drinkTitle={this.drinkTitle} drinkRecipe={this.drinkRecipe}/>
-                        </ErrorBoundary>
+                                <DetailView 
+                                    image={data.strDrinkThumb + "/preview"} 
+                                    drinkTitle={data.strDrink} 
+                                    drinkRecipe={data.strInstructions} 
+                                />
+                                ))}
+                        </div>
                     </Route>
-                    <Route path="/random">
+                    {/* <Route path="/random">
                         <ErrorBoundary>
                             <DetailView image={this.image} drinkTitle={this.drinkTitle} drinkRecipe={this.drinkRecipe}/>
                         </ErrorBoundary>
 
-                    </Route>
+                    </Route> */}
                 </Switch>
             </div>
         )
     }      
 }
-
 const rootStyle: CSSProperties = {
     display: "flex",
     flexDirection: "column",
     background: '#915460',
     width: "100%",
     height: "100%"
+}
+const drinkGridStyle: CSSProperties = {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: 'wrap',
+    background: '#915460',
+    justifyContent: "center",
+    alignItems: "center"
+}
+const backButtonStyle: CSSProperties = {
+    display: 'flex',
+    justifyContent: "center",
+    alignItems: "center",
+    margin: "2rem",
 }
 
 export default Layout;
