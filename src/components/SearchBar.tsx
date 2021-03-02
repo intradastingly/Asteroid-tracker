@@ -41,6 +41,7 @@ const searchBox: CSSProperties = {
     border: 'none',
     backgroundImage:'none',
     boxShadow: 'none',
+    marginBottom: '2rem'
 }
 
 const dropDownListStyle: CSSProperties = {

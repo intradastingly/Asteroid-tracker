@@ -1,7 +1,5 @@
 
 import React, { CSSProperties } from "react";
-import { Link } from "react-router-dom";
-import Buttons from './buttons';
 
 
 interface Props {
@@ -18,10 +16,6 @@ interface Props {
 
 function DetailView(props: Props) {
 
-    function somethingHappens() {
-        //route back to master view
-    }
-  
         return (
             <div style={rootStyle}>
                 <img style={imageStyle} src={props.image} alt="" />
@@ -33,12 +27,12 @@ function DetailView(props: Props) {
                     <p>{props.ingredients3}</p>
                     <p>{props.ingredients4}</p>
                     <p>{props.ingredients5}</p>
-                <Link to="/">
-                    <Buttons text="Back" handleClick={somethingHappens} />
-                </Link>
+                <
             </div>
         );
 }
+
+
 
 
 const rootStyle: CSSProperties = {
@@ -47,13 +41,28 @@ const rootStyle: CSSProperties = {
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    flex: "1",
+    maxWidth: "25rem",
+    textAlign: 'center',
+    margin: "1rem",
+    backgroundColor: '#6d0000',
+    padding: '1rem',
+    borderRadius: '2rem',
+    color: "white"
 }
 
 const imageStyle: CSSProperties = {
-                    maxWidth: "10rem",
+    maxWidth: "8rem",
     borderRadius: "2rem",
-    margin: "2rem 0",
+    margin: ".5rem 0",
+}
+
+const drinkStyleTitle: CSSProperties = {
+    fontSize: "1rem",
+}
+
+const  drinkStyleRecipe: CSSProperties = {
+    fontSize: ".8rem",
+    margin: "0 1rem"
 }
 
 

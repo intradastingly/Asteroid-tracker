@@ -2,8 +2,10 @@ import React, {Component, CSSProperties} from 'react';
 import DetailView from './DetailView';
 import MasterView from './MasterView';
 import Header from './Header';
-import { Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 import ErrorBoundary from './errorBoundary';
+import Buttons from './buttons';
+
 interface State {
     drink: any[],
 }
@@ -14,14 +16,11 @@ class Layout extends Component<Props,State> {
         drink: [],
     }
 
-    image = "../assets/drink.png";
-    drinkTitle = 'Bloody Mary'  
-    drinkRecipe = "Only alcohol in this drink"
-
     displayDrink = (value: []) => {
         this.setState({drink: value});
     }
  
+
     render() {
         const drinkMap = this.state.drink;
         console.log(drinkMap)
@@ -30,13 +29,19 @@ class Layout extends Component<Props,State> {
                 <Header />
                 <Switch>
                     <Route exact path="/">
-                        {/* <ErrorBoundary> */}
+                        <ErrorBoundary>
                             <MasterView drink={this.state.drink} onSearchDrink={this.displayDrink}/>
-                        {/* </ErrorBoundary> */}
+                        </ErrorBoundary>
                     </Route>  
                     <Route path="/search">
                         <ErrorBoundary>
-                            {drinkMap.map((data)=> (
+                            <div style={backButtonStyle}>
+                                <Link to="/">
+                                    <Buttons text="Back" handleClick={this.somethingHappens}/>
+                                </Link>
+                            </div>
+                        <div style={drinkGridStyle}>
+                        {drinkMap.map((data)=> (
                                 <DetailView 
                                     image={data.strDrinkThumb + "/preview"} 
                                     drinkTitle={data.strDrink} 
@@ -55,13 +60,26 @@ class Layout extends Component<Props,State> {
         )
     }      
 }
-
 const rootStyle: CSSProperties = {
     display: "flex",
     flexDirection: "column",
     background: '#915460',
     width: "100%",
     height: "100%"
+}
+const drinkGridStyle: CSSProperties = {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: 'wrap',
+    background: '#915460',
+    justifyContent: "center",
+    alignItems: "center"
+}
+const backButtonStyle: CSSProperties = {
+    display: 'flex',
+    justifyContent: "center",
+    alignItems: "center",
+    margin: "2rem",
 }
 
 export default Layout;
