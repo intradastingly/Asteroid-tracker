@@ -64,7 +64,11 @@ class MasterView extends Component<Props, State> {
     }
 
     render() {
-
+        // test error boundry
+        // if(this.props) {
+        //     const haha: any  = null;
+        //     console.log(haha.lol)
+        // }
         return (
             <div style={rootStyle}>
                 <StartPageImage />

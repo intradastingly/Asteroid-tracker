@@ -1,32 +1,30 @@
-import React, { Component, CSSProperties, ErrorInfo } from 'react';
-import { RouteComponentProps, withRouter } from 'react-router-dom';
+import React, { Component, CSSProperties } from 'react';
 
-interface Props extends RouteComponentProps {}
+interface Props {}
 interface State {
     hasError: boolean;
 }
 
-class ErrorBoundary extends Component<Props, State> {
-    state: State = {
+export default class ErrorBoundary extends Component<Props, State> {
+    state = {
         hasError: false
     };
 
-    static getDerivedStateFromError(): State {
-        return { hasError: true }
+    reloadPage = () => {
+        window.URL = window.URL;
     }
 
-    componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
-        console.log({ error, errorInfo });
+    componentDidCatch() {
+        this.setState({ hasError: true });
     }
 
-    navigateBack = () => this.props.history.goBack();
-    
     render() {
         if (this.state.hasError) {
             return (
                 <div style={rootStyle}>
-                    <p style={textStyle}>Tyvärr gick det inte ladda innehållet.</p>
-                    <button onClick={this.navigateBack}>Prova gå tillbaka</button>
+                    <h2>There was an error, we are working to fix this!</h2>
+                    <h4>come back soon for epic adventure</h4>
+                    <b>try <a href="" onClick={this.reloadPage}>Reload</a> the page</b>
                 </div>
             );
         }
@@ -37,16 +35,11 @@ class ErrorBoundary extends Component<Props, State> {
 
 const rootStyle: CSSProperties = {
     background: 'white',
-    width: '100%',
+    color: '#1E1E1E',
     height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center'
-}
-
-const textStyle: CSSProperties = {
-    textAlign: 'center'
-}
-
-export default withRouter(ErrorBoundary);
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+    backgroundColor: "#F5FFC6"
+};

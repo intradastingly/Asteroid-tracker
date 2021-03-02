@@ -15,8 +15,9 @@ function DetailView(props: Props) {
 function somethingHappens(){
     //route back to master view
 }
-    
-
+    // test error boundry
+    // const haha: any = null
+    // console.log(haha.lol)
 return (
         <div style={rootStyle}>
             <img style={imageStyle} src={props.image} alt=""/>
