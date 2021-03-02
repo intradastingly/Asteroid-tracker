@@ -18,7 +18,7 @@ function Buttons(props: Props){
 const buttonStyle: CSSProperties = {
     height: "3rem",
     width: "12rem",
-    margin: "2rem",
+   // margin: "2rem",
     backgroundColor: '#6d0000',
     borderRadius: "5px",
     border: 'none',
