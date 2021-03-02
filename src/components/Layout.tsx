@@ -3,6 +3,8 @@ import DetailView from './DetailView';
 import MasterView from './MasterView';
 import Header from './Header';
 import { Route, Switch } from 'react-router-dom';
+import ErrorBoundary from './errorBoundary';
+
 
 
 
@@ -17,6 +19,7 @@ class Layout extends Component<Props,State> {
         drink: []
     }
    
+
     image = "../assets/drink.png";
     drinkTitle = 'Bloody Mary'  
     drinkRecipe = "Only alcohol in this drink"
@@ -24,21 +27,32 @@ class Layout extends Component<Props,State> {
     displayDrink = (value: []) => {
         this.setState({drink: value});
     }
+ 
 
     render() {
         console.log(this.state)
+        // if(this.drinkTitle) {
+        //     const nullbull: any = null;
+        //     console.log(nullbull.azaz)
+        // }
         return (
             <div style={rootStyle}>
                 <Header />
                 <Switch>
                     <Route exact path="/">
-                        <MasterView drink={this.state.drink} onSearchDrink={this.displayDrink}/>
+                        <ErrorBoundary>
+                            <MasterView drink={this.state.drink} onSearchDrink={this.displayDrink}/>
+                        </ErrorBoundary>
                     </Route>  
                     <Route path="/search">
-                        <DetailView image={this.image} drinkTitle={this.drinkTitle} drinkRecipe={this.drinkRecipe}/>
+                        <ErrorBoundary>
+                            <DetailView image={this.image} drinkTitle={this.drinkTitle} drinkRecipe={this.drinkRecipe}/>
+                        </ErrorBoundary>
                     </Route>
                     <Route path="/random">
-                        <DetailView image={this.image} drinkTitle={this.drinkTitle} drinkRecipe={this.drinkRecipe}/>
+                        <ErrorBoundary>
+                            <DetailView image={this.image} drinkTitle={this.drinkTitle} drinkRecipe={this.drinkRecipe}/>
+                        </ErrorBoundary>
                     </Route>
                 </Switch>
             </div>
