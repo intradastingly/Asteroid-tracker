@@ -1,14 +1,19 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, Suspense } from "react";
 import { BrowserRouter } from "react-router-dom";
 import Layout from "./Layout";
+import ErrorBoundary from "./errorBoundary";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Suspense fallback={<h2>get drunk</h2>}>
+      <BrowserRouter>
         <div style={rootStyle}>
+          <ErrorBoundary>
             <Layout />
+          </ErrorBoundary>
         </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </Suspense>
   );
 }
 

@@ -88,7 +88,7 @@ class MasterView extends Component<Props, State> {
     }
 
     render() {
-    // console.log(this.state.data)
+
         return (
             <div style={rootStyle}>
                 <StartPageImage />
