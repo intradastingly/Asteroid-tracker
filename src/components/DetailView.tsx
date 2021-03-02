@@ -40,13 +40,15 @@ const rootStyle: CSSProperties = {
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    maxWidth: "25rem",
+    width: "25rem",
     textAlign: 'center',
     margin: "1rem",
     backgroundColor: '#6d0000',
     padding: '1rem',
     borderRadius: '2rem',
-    color: "white"
+    color: "white",
+    boxShadow: '0 0 23px 4px black',
+    
 }
 
 const imageStyle: CSSProperties = {

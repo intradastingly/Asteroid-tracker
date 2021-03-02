@@ -39,6 +39,7 @@ const searchBox: CSSProperties = {
     padding: '.5rem',
     fontSize: '1.5rem',
     border: 'none',
+    borderRadius: '.5rem',
     backgroundImage:'none',
     boxShadow: 'none',
     marginBottom: '2rem'
