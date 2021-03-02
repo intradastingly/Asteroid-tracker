@@ -20,11 +20,8 @@ class Layout extends Component<Props,State> {
         this.setState({drink: value});
     }
 
-    somethingHappens() {
-        
-    }
+    somethingHappens() {}
  
-
     render() {
         const drinkMap = this.state.drink;
         console.log(drinkMap)
@@ -45,8 +42,9 @@ class Layout extends Component<Props,State> {
                                 </Link>
                             </div>
                             <div style={drinkGridStyle}>
-                                {drinkMap.map((data)=> (
+                                {drinkMap.map((data, i)=> (
                                         <DetailView 
+                                            key={i}
                                             image={data.strDrinkThumb + "/preview"} 
                                             drinkTitle={data.strDrink} 
                                             drinkRecipe={data.strInstructions} 

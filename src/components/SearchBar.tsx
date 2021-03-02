@@ -23,8 +23,12 @@ class SearchBar extends Component<Props,State>  {
                     onChange={this.handleChange}
                 />
                 <datalist id='listid' style={dropDownListStyle}>
-                    {dropDownList.map((list) => (
-                        <option label={list.strDrink} value={list.strDrink}/>
+                    {dropDownList.map((list, i) => (
+                        <option 
+                            key={i}
+                            label={list.strDrink} 
+                            value={list.strDrink}
+                        />
                     ))}
                 </datalist>
             </div>

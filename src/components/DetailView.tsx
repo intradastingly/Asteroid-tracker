@@ -32,8 +32,6 @@ function DetailView(props: Props) {
 }
 
 
-
-
 const rootStyle: CSSProperties = {
     display: 'flex',
     position: 'relative',
