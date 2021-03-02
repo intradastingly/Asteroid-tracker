@@ -12,7 +12,7 @@ npm install
 ```
 To start the development server, use
 ```shell
-npm run start
+npm start
 ```
 
 See the working example at https://intradastingly.github.io/Drinks/
