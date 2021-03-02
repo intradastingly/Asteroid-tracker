@@ -1,5 +1,4 @@
-# DRINKS </br></br>
-
+# DRINKS </br>
 A React application for viewing recipes of drinks and cocktails from around the world with the help of [TheCocktailDB] (https://www.thecocktaildb.com).
 
 ## Features
