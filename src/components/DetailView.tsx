@@ -26,8 +26,7 @@ function DetailView(props: Props) {
                     <p>{props.ingredients2}</p>
                     <p>{props.ingredients3}</p>
                     <p>{props.ingredients4}</p>
-                    <p>{props.ingredients5}</p>
-                <
+                    <p>{props.ingredients5}</p> 
             </div>
         );
 }

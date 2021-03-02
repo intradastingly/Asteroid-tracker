@@ -19,6 +19,10 @@ class Layout extends Component<Props,State> {
     displayDrink = (value: []) => {
         this.setState({drink: value});
     }
+
+    somethingHappens() {
+        
+    }
  
 
     render() {
@@ -40,26 +44,29 @@ class Layout extends Component<Props,State> {
                                     <Buttons text="Back" handleClick={this.somethingHappens}/>
                                 </Link>
                             </div>
-                        <div style={drinkGridStyle}>
-                        {drinkMap.map((data)=> (
-                                <DetailView 
-                                    image={data.strDrinkThumb + "/preview"} 
-                                    drinkTitle={data.strDrink} 
-                                    drinkRecipe={data.strInstructions} 
-                                    ingredients1={data.strIngredient1}
-                                    ingredients2={data.strIngredient2}
-                                    ingredients3={data.strIngredient3}
-                                    ingredients4={data.strIngredient4}
-                                    ingredients5={data.strIngredient5}
-                                />
-                            ))}
+                            <div style={drinkGridStyle}>
+                                {drinkMap.map((data)=> (
+                                        <DetailView 
+                                            image={data.strDrinkThumb + "/preview"} 
+                                            drinkTitle={data.strDrink} 
+                                            drinkRecipe={data.strInstructions} 
+                                            ingredients1={data.strIngredient1}
+                                            ingredients2={data.strIngredient2}
+                                            ingredients3={data.strIngredient3}
+                                            ingredients4={data.strIngredient4}
+                                            ingredients5={data.strIngredient5}
+                                        />
+                                    ))}
+                            </div>
                         </ErrorBoundary>
                     </Route>
                 </Switch>
             </div>
         )
-    }      
-}
+    }
+}      
+
+
 const rootStyle: CSSProperties = {
     display: "flex",
     flexDirection: "column",
