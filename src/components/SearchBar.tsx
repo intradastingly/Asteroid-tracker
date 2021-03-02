@@ -13,13 +13,12 @@ class SearchBar extends Component<Props,State>  {
 
     render() {
         const dropDownList = this.props.dropDownList;
-        console.log(dropDownList[0])
         return (
             <div>
                 <input 
                     list="listid"
                     style={searchBox}
-                    placeholder="Search"
+                    placeholder="Drink"
                     value={this.props.value}
                     onChange={this.handleChange}
                 />
@@ -33,13 +32,15 @@ class SearchBar extends Component<Props,State>  {
     }
 }
 
-
 const searchBox: CSSProperties = {
-    width: '12rem',
-    borderRadius: '3rem',
+    width: '16rem',
+    height: '1.5rem',
     background: 'white',
     padding: '.5rem',
-    outline: "none",
+    fontSize: '1.5rem',
+    border: 'none',
+    backgroundImage:'none',
+    boxShadow: 'none',
 }
 
 export default SearchBar;

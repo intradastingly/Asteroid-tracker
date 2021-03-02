@@ -16,13 +16,14 @@ function Buttons(props: Props){
 }
 
 const buttonStyle: CSSProperties = {
-    height: "2rem",
-    width: "5rem",
+    height: "3rem",
+    width: "12rem",
     margin: "2rem",
-    backgroundColor: "#b4e1ff",
+    backgroundColor: '#6d0000',
     borderRadius: "5px",
     border: 'none',
-    boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
+    fontSize: '2rem',
+    color: 'white'
 }
 
 export default Buttons;
