@@ -1,8 +1,8 @@
 import React, { CSSProperties } from "react";
 
 
-
 function Header() {
+    
     return (
         <div style={headerStyle}>
             <h1>HANGOVER CURES</h1>

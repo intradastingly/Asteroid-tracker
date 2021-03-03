@@ -24,7 +24,6 @@ class Layout extends Component<Props,State> {
  
     render() {
         const drinkMap = this.state.drink;
-        console.log(drinkMap)
         return (
             <div style={rootStyle}>
                 <Header />
