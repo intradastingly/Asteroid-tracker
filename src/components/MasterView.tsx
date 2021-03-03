@@ -10,7 +10,6 @@ interface Props extends RouteComponentProps {
 
 interface State {
     searchValue: string;
-
 }
 class MasterView extends Component<Props, State> {
     state: State = {
