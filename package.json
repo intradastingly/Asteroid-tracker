@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://intradastingly.github.io/HANGOVER-CURE",
+  "homepage": "https://intradastingly.github.io/HANGOVER-CURE/",
   "scripts": {
     "start": "npm-run-all --parallel build serve",
     "build": "webpack --watch",
