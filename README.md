@@ -19,4 +19,4 @@ See the working example at https://intradastingly.github.io/hangover-cure/
 
 https://github.com/intradastingly/hangover-cure
 
-## By: Asaf Läckgren, Anton Mäenpää, Camilla JOhansson & Gustav Andersson
+## By: Asaf Läckgren, Anton Mäenpää, Camilla Johansson & Gustav Andersson
