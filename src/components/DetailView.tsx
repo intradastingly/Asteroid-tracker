@@ -10,7 +10,12 @@ interface Props {
     ingredients2: string,
     ingredients3: string,
     ingredients4: string,
-    ingredients5: string
+    ingredients5: string,
+    ingredientsAmount: string,
+    ingredientsAmount1: string,
+    ingredientsAmount2: string,
+    ingredientsAmount3: string,
+    ingredientsAmount4: string,
 
 }
 
@@ -22,11 +27,11 @@ function DetailView(props: Props) {
                 <h2 >{props.drinkTitle}</h2>
                 <p>{props.drinkRecipe}</p>
                 <h3>Ingredients</h3>
-                    <p>{props.ingredients1}</p>
-                    <p>{props.ingredients2}</p>
-                    <p>{props.ingredients3}</p>
-                    <p>{props.ingredients4}</p>
-                    <p>{props.ingredients5}</p> 
+                    <p>{props.ingredients1} {props.ingredientsAmount}</p>
+                    <p>{props.ingredients2} {props.ingredientsAmount1}</p>
+                    <p>{props.ingredients3} {props.ingredientsAmount2}</p>
+                    <p>{props.ingredients4} {props.ingredientsAmount3}</p>
+                    <p>{props.ingredients5} {props.ingredientsAmount4}</p> 
             </div>
         );
 }

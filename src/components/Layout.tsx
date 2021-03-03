@@ -53,6 +53,11 @@ class Layout extends Component<Props,State> {
                                             ingredients3={data.strIngredient3}
                                             ingredients4={data.strIngredient4}
                                             ingredients5={data.strIngredient5}
+                                            ingredientsAmount={data.strMeasure1}
+                                            ingredientsAmount1={data.strMeasure2}
+                                            ingredientsAmount2={data.strMeasure3}
+                                            ingredientsAmount3={data.strMeasure4}
+                                            ingredientsAmount4={data.strMeasure5}
                                         />
                                     ))}
                             </div>
