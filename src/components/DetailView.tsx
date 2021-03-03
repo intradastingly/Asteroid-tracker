@@ -22,11 +22,13 @@ function DetailView(props: Props) {
                 <h2 >{props.drinkTitle}</h2>
                 <p>{props.drinkRecipe}</p>
                 <h3>Ingredients</h3>
-                    <p>{props.ingredients1}</p>
-                    <p>{props.ingredients2}</p>
-                    <p>{props.ingredients3}</p>
-                    <p>{props.ingredients4}</p>
-                    <p>{props.ingredients5}</p> 
+                    <div>
+                        <p>{props.ingredients1}</p>
+                        <p>{props.ingredients2}</p>
+                        <p>{props.ingredients3}</p>
+                        <p>{props.ingredients4}</p>
+                        <p>{props.ingredients5}</p> 
+                    </div>
             </div>
         );
 }
@@ -51,20 +53,8 @@ const rootStyle: CSSProperties = {
 
 const imageStyle: CSSProperties = {
     maxWidth: "8rem",
-    borderRadius: "2rem",
+    borderRadius: "1rem",
     margin: ".5rem 0",
 }
-
-const drinkStyleTitle: CSSProperties = {
-    fontSize: "1rem",
-}
-
-const  drinkStyleRecipe: CSSProperties = {
-    fontSize: ".8rem",
-    margin: "0 1rem"
-}
-
-
-
 
 export default DetailView;
