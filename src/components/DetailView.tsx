@@ -27,18 +27,16 @@ function DetailView(props: Props) {
                 <h2 >{props.drinkTitle}</h2>
                 <p>{props.drinkRecipe}</p>
                 <h3>Ingredients</h3>
-
+                    <div>
                     <p>{props.ingredients1} {props.ingredientsAmount}</p>
                     <p>{props.ingredients2} {props.ingredientsAmount1}</p>
                     <p>{props.ingredients3} {props.ingredientsAmount2}</p>
                     <p>{props.ingredients4} {props.ingredientsAmount3}</p>
                     <p>{props.ingredients5} {props.ingredientsAmount4}</p> 
-
-     
+                    </div>
             </div>
         );
 }
-
 
 const rootStyle: CSSProperties = {
     display: 'flex',
