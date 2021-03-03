@@ -1,15 +1,24 @@
 import React, { CSSProperties } from "react";
+import { Link } from 'react-router-dom';
 
 
 function Header() {
     
     return (
-        <div style={headerStyle}>
-            <h1>HANGOVER CURES</h1>
+        <div style={headerStyle}>           
+            <h1 >
+                <Link to='/' style={headerTextStyle}>
+                    HANGOVER CURES
+                </Link>
+            </h1>            
         </div>
     )
 }
 
+const headerTextStyle: CSSProperties = {
+    color: 'white',
+    textDecoration: 'none'
+}
 const headerStyle: CSSProperties = {
     display: 'flex',
     height: '5rem',

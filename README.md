@@ -15,8 +15,9 @@ To start the development server, use
 npm start
 ```
 
-See the working example at https://intradastingly.github.io/Drinks/
+See the working example [here](https://intradastingly.github.io/HANGOVER-CURE/)
+Link to github repo [here](https://github.com/intradastingly/HANGOVER-CURE)
 
-https://github.com/intradastingly/Drinks
 
-## By: Asaf Läckgren, Anton Mäenpää, Camilla JOhansson & Gustav Andersson
+
+## By: Asaf Läckgren, Anton Mäenpää, Camilla Johansson & Gustav Andersson
