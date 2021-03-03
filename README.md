@@ -1,4 +1,4 @@
-# HANGOVER-CURE </br>
+# DRINKS </br>
 A React application for viewing recipes of drinks and cocktails from around the world with the help of [TheCocktailDB] (https://www.thecocktaildb.com).
 
 ## Features
@@ -14,7 +14,10 @@ To start the development server, use
 ```shell
 npm start
 ```
+
 See the working example [here](https://intradastingly.github.io/HANGOVER-CURE/)
 Link to github repo [here](https://github.com/intradastingly/HANGOVER-CURE)
+
+
 
 ## By: Asaf Läckgren, Anton Mäenpää, Camilla Johansson & Gustav Andersson
