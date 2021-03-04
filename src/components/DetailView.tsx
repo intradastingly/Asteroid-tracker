@@ -1,7 +1,7 @@
 
 import React, { CSSProperties } from "react";
 import { Link } from "react-router-dom";
-import Buttons from './buttons';
+import Buttons from './Buttons';
 
 
 interface Props {
