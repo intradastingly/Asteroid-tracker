@@ -46,7 +46,8 @@ const searchBox: CSSProperties = {
     borderRadius: '.5rem',
     backgroundImage:'none',
     boxShadow: 'none',
-    marginBottom: '2rem'
+    marginBottom: '2rem',
+    outline: 'none'
 }
 
 const dropDownListStyle: CSSProperties = {
