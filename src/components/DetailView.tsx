@@ -1,5 +1,7 @@
 
 import React, { CSSProperties } from "react";
+// import { Link } from "react-router-dom";
+// import Buttons from './Buttons';
 
 
 interface Props {
@@ -57,8 +59,7 @@ const rootStyle: CSSProperties = {
     padding: '1rem',
     borderRadius: '2rem',
     color: "#6d0000",
-    boxShadow: '0 0 10px 0.03px black',
-    
+    boxShadow: '0 0 10px 0.03px black', 
 }
 
 const imageStyle: CSSProperties = {
@@ -91,4 +92,6 @@ const h2Style: CSSProperties = {
     fontFamily: 'Shadows Into Light',
     margin: '0rem 0rem 0rem 0rem'
 }
+
+
 export default DetailView;
