@@ -1,7 +1,7 @@
 import React, {Component, CSSProperties} from 'react';
 import SearchBar from './SearchBar';
-import StartPageImage from "./StartPageImage";
-import Buttons from "./Buttons";
+import StartPageImage from "./startPageImage";
+import Buttons from "./buttons";
 import { Link, RouteComponentProps, withRouter } from "react-router-dom"
 interface Props extends RouteComponentProps {
     drink: any[];
