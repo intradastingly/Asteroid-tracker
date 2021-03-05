@@ -5,7 +5,6 @@ import Header from './Header';
 import { Link, Route, Switch } from 'react-router-dom';
 import ErrorBoundary from './errorBoundary';
 import Buttons from './buttons';
-
 interface State {
     drink: any[],
 }
@@ -42,7 +41,6 @@ class Layout extends Component<Props,State> {
                             </div>
                             <div style={drinkGridStyle}>
                                 {drinkMap ?  drinkMap.map((data, i)=> (
-    
                                     <DetailView 
                                         key={i}
                                         image={data.strDrinkThumb + "/preview"} 
@@ -59,11 +57,12 @@ class Layout extends Component<Props,State> {
                                         ingredientsAmount3={data.strMeasure4}
                                         ingredientsAmount4={data.strMeasure5}
                                              />
-                                        )): [] }
-                           
+                                        )): 
+                                            <div style={invalidStyle}>
+                                                Please input a valid result!
+                                            </div>
+                                        }                     
                                 </div>
-
-                                
                         </ErrorBoundary>
                     </Route>
                 </Switch>
@@ -93,6 +92,12 @@ const backButtonStyle: CSSProperties = {
     justifyContent: "center",
     alignItems: "center",
     margin: "2rem",
+}
+
+const invalidStyle: CSSProperties = {
+    fontSize: "1.2rem",
+    paddingTop: '10rem',
+    color: "white"
 }
 
 export default Layout;
