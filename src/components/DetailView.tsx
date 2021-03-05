@@ -30,11 +30,9 @@ function DetailView(props: Props) {
                 <img style={imageStyle} src={props.image} alt="" />
             <div style={innerDivStyle}>
                 <div>
-                    {/* <h4>How to</h4> */}
                     <p style={paraStyle}>{props.drinkRecipe}</p>
                 </div>
                 <div>
-                    {/* <h4>Ingredients</h4> */}
                         <p style={pStyling}>{props.ingredients1}  {props.ingredientsAmount}</p>
                         <p style={pStyling}>{props.ingredients2}  {props.ingredientsAmount1}</p>
                         <p style={pStyling}>{props.ingredients3}  {props.ingredientsAmount2}</p>
