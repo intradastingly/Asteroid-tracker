@@ -52,7 +52,7 @@ const searchBox: CSSProperties = {
 }
 
 const dropDownListStyle: CSSProperties = {
-    position: 'fixed',
+    position: 'absolute',
     border: 'none',
     borderRadius: '.5rem',
     backgroundImage:'none',

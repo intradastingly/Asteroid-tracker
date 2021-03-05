@@ -3,8 +3,8 @@ import DetailView from './DetailView';
 import MasterView from './MasterView';
 import Header from './Header';
 import { Link, Route, Switch } from 'react-router-dom';
-import ErrorBoundary from './errorBoundary';
-import Buttons from './buttons';
+import ErrorBoundary from './ErrorBoundary';
+import Buttons from './Buttons';
 interface State {
     drink: any[],
 }
