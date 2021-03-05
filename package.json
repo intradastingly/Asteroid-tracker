@@ -9,7 +9,7 @@
     "build": "webpack --watch",
     "serve": "live-server --watch=dist,index.html",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gulp-gh-pages -d build"
   },
   "keywords": [],
   "author": "",
