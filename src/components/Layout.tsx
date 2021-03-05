@@ -97,4 +97,11 @@ const backButtonStyle: CSSProperties = {
    margin: '2rem',
 };
 
+const invalidStyle: CSSProperties = {
+   fontSize: '2rem',
+   paddingTop: '10rem',
+   color: 'white',
+   fontWeight: 'bold',
+};
+
 export default Layout;
