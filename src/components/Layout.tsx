@@ -59,7 +59,7 @@ class Layout extends Component<Props,State> {
                                              />
                                         )): 
                                             <div style={invalidStyle}>
-                                                Please input a valid result!
+                                                Sorry, we couldn't find that drink! 
                                             </div>
                                         }                     
                                 </div>
@@ -95,9 +95,10 @@ const backButtonStyle: CSSProperties = {
 }
 
 const invalidStyle: CSSProperties = {
-    fontSize: "1.2rem",
+    fontSize: "2rem",
     paddingTop: '10rem',
-    color: "white"
+    color: "white",
+    fontWeight: 'bold'
 }
 
 export default Layout;
