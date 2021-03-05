@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties } from 'react';
 
 interface Props {
    text: string;
@@ -14,14 +14,14 @@ function Buttons(props: Props) {
 }
 
 const buttonStyle: CSSProperties = {
-   height: "2.5rem",
-   width: "6rem",
-   margin: "0 1rem",
-   backgroundColor: "#6d0000",
-   borderRadius: "10px",
-   border: "none",
-   fontSize: "1.5rem",
-   color: "white",
+   height: '2.5rem',
+   width: '6rem',
+   margin: '0 1rem',
+   backgroundColor: '#6d0000',
+   borderRadius: '10px',
+   border: 'none',
+   fontSize: '1.5rem',
+   color: 'white',
 };
 
 export default Buttons;

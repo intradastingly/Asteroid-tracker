@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties } from 'react';
 
 interface Props {
    image: string;
@@ -25,11 +25,11 @@ function DetailView(props: Props) {
          <img style={imageStyle} src={props.image} alt="" />
          <div style={innerDivStyle}>
             <div>
-               {/* <h4>How to</h4> */}
+               <h4>How to</h4>
                <p style={paraStyle}>{props.drinkRecipe}</p>
             </div>
             <div>
-               {/* <h4>Ingredients</h4> */}
+               <h4>Ingredients</h4>
                <p style={pStyling}>
                   {props.ingredients1} {props.ingredientsAmount}
                </p>
@@ -52,50 +52,50 @@ function DetailView(props: Props) {
 }
 
 const rootStyle: CSSProperties = {
-   display: "flex",
-   position: "relative",
-   justifyContent: "center",
-   alignItems: "center",
-   flexDirection: "column",
-   width: "20rem",
-   textAlign: "center",
-   margin: "1rem",
-   backgroundColor: "#ffeed1",
-   padding: "1rem",
-   borderRadius: "2rem",
-   color: "#6d0000",
-   boxShadow: "0 0 10px 0.03px black",
+   display: 'flex',
+   position: 'relative',
+   justifyContent: 'center',
+   alignItems: 'center',
+   flexDirection: 'column',
+   width: '20rem',
+   textAlign: 'center',
+   margin: '1rem',
+   backgroundColor: '#ffeed1',
+   padding: '1rem',
+   borderRadius: '2rem',
+   color: '#6d0000',
+   boxShadow: '0 0 10px 0.03px black',
 };
 
 const imageStyle: CSSProperties = {
-   maxWidth: "20rem",
-   margin: ".5rem 0",
-   borderRadius: ".02rem",
+   maxWidth: '20rem',
+   margin: '.5rem 0',
+   borderRadius: '.02rem',
 };
 
 const pStyling: CSSProperties = {
-   fontSize: "0.7rem",
+   fontSize: '0.7rem',
 };
 
 const innerDivStyle: CSSProperties = {
-   display: "flex",
-   position: "relative",
-   justifyContent: "center",
-   alignItems: "center",
-   flexDirection: "column",
+   display: 'flex',
+   position: 'relative',
+   justifyContent: 'center',
+   alignItems: 'center',
+   flexDirection: 'column',
 };
 
 const paraStyle: CSSProperties = {
-   fontSize: "0.9rem",
-   fontWeight: "normal",
-   width: "80%",
-   paddingLeft: "2rem",
+   fontSize: '0.9rem',
+   fontWeight: 'normal',
+   width: '80%',
+   paddingLeft: '2rem',
 };
 
 const h2Style: CSSProperties = {
-   fontSize: "2rem",
-   fontFamily: "Shadows Into Light",
-   margin: "0rem 0rem 0rem 0rem",
+   fontSize: '2rem',
+   fontFamily: 'Shadows Into Light',
+   margin: '0rem 0rem 0rem 0rem',
 };
 
 export default DetailView;

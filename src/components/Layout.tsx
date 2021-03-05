@@ -1,10 +1,10 @@
-import React, { Component, CSSProperties } from "react";
-import { Link, Route, Switch } from "react-router-dom";
-import DetailView from "./DetailView";
-import MasterView from "./MasterView";
-import ErrorBoundary from "./ErrorBoundary";
-import Header from "./Header";
-import Buttons from "./Buttons";
+import React, { Component, CSSProperties } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
+import DetailView from './DetailView';
+import MasterView from './MasterView';
+import ErrorBoundary from './ErrorBoundary';
+import Header from './Header';
+import Buttons from './Buttons';
 
 interface State {
    drink: any[];
@@ -51,7 +51,7 @@ class Layout extends Component<Props, State> {
                         {drinkMap.map((data, i) => (
                            <DetailView
                               key={i}
-                              image={data.strDrinkThumb + "/preview"}
+                              image={data.strDrinkThumb + '/preview'}
                               drinkTitle={data.strDrink}
                               drinkRecipe={data.strInstructions}
                               ingredients1={data.strIngredient1}
@@ -76,25 +76,25 @@ class Layout extends Component<Props, State> {
 }
 
 const rootStyle: CSSProperties = {
-   display: "flex",
-   flexDirection: "column",
-   background: "#915460",
-   width: "100%",
-   height: "100%",
+   display: 'flex',
+   flexDirection: 'column',
+   background: '#915460',
+   width: '100%',
+   height: '100%',
 };
 const drinkGridStyle: CSSProperties = {
-   display: "flex",
-   flexDirection: "row",
-   flexWrap: "wrap",
-   background: "#915460",
-   justifyContent: "center",
-   alignItems: "center",
+   display: 'flex',
+   flexDirection: 'row',
+   flexWrap: 'wrap',
+   background: '#915460',
+   justifyContent: 'center',
+   alignItems: 'center',
 };
 const backButtonStyle: CSSProperties = {
-   display: "flex",
-   justifyContent: "center",
-   alignItems: "center",
-   margin: "2rem",
+   display: 'flex',
+   justifyContent: 'center',
+   alignItems: 'center',
+   margin: '2rem',
 };
 
 export default Layout;

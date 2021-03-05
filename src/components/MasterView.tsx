@@ -3,13 +3,10 @@ import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import StartPageImage from './StartPageImage';
 import Buttons from './Buttons';
-// import { makeStyles, useTheme } from '@material-ui/core';  
-import Grid from "@material-ui/core/Grid";
+import Grid from '@material-ui/core/Grid';
 
 interface Props extends RouteComponentProps {
    drink: any[];
-   //    className: string;
-   //    serachBar: any;
    onSearchDrink: (value: []) => void;
 }
 
@@ -17,16 +14,6 @@ interface State {
    searchValue: string;
 }
 
-// const useStyles = makeStyles((theme) => ({
-//     SearchBar: {
-//        width: '12rem',
-//        [theme.breakpoints.down('sm')]: {
-//          width: '8rem',
-//      },
-//     },
-//  }));
-
- 
 class MasterView extends Component<Props, State> {
    state: State = {
       searchValue: '',
@@ -60,13 +47,9 @@ class MasterView extends Component<Props, State> {
             <div>
                <StartPageImage />
             </div>
-            <Grid style={searchDiv}
-                container
-                justify="center"
-                >
+            <Grid style={searchDiv} container justify="center">
                <Grid item>
                   <SearchBar
-                    //  className={classes.SearchBar}
                      value={this.state.searchValue}
                      onChange={this.handleSearchResult}
                      dropDownList={this.props.drink}
@@ -85,11 +68,6 @@ class MasterView extends Component<Props, State> {
       );
    }
 }
-
-
-
-// const theme = useTheme();
-// const classes = useStyles();
 
 const rootStyle: CSSProperties = {
    display: 'flex',

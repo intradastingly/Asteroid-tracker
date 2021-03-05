@@ -1,4 +1,4 @@
-import React, { ChangeEvent, Component, CSSProperties } from "react";
+import React, { ChangeEvent, Component, CSSProperties } from 'react';
 interface Props {
    value: string;
    onChange: (value: string) => void;
@@ -32,26 +32,21 @@ class SearchBar extends Component<Props, State> {
 }
 
 const searchBox: CSSProperties = {
-   maxWidth: "12rem",
-//    minWidth: "8rem",
-   height: "1.5rem",
-   background: "white",
-   padding: ".5rem",
-   fontSize: "1.5rem",
-   border: "none",
-   borderRadius: ".5rem",
-   marginBottom: "2rem",
-//    backgroundImage: "none", DEFAULT
-//    boxShadow: "none", DEFAULT
+   maxWidth: '12rem',
+   height: '1.5rem',
+   background: 'white',
+   padding: '.5rem',
+   fontSize: '1.5rem',
+   border: 'none',
+   borderRadius: '.5rem',
+   marginBottom: '2rem',
 };
 
 const dropDownListStyle: CSSProperties = {
-   position: "fixed",
-   border: "none",
-   borderRadius: ".5rem",
-   marginBottom: "2rem",
-//    backgroundImage: "none", DEFAULT
-//    boxShadow: "none", DEFAULT
+   position: 'fixed',
+   border: 'none',
+   borderRadius: '.5rem',
+   marginBottom: '2rem',
 };
 
 export default SearchBar;

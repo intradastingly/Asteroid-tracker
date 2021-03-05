@@ -1,7 +1,7 @@
-import React, { CSSProperties, Suspense } from "react";
-import { BrowserRouter } from "react-router-dom";
-import Layout from "./Layout";
-import ErrorBoundary from "./ErrorBoundary";
+import React, { CSSProperties, Suspense } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Layout from './Layout';
+import ErrorBoundary from './ErrorBoundary';
 
 function App() {
    return (
@@ -18,8 +18,8 @@ function App() {
 }
 
 const rootStyle: CSSProperties = {
-   width: "100%",
-   height: "100%",
+   width: '100%',
+   height: '100%',
 };
 
 export default App;
