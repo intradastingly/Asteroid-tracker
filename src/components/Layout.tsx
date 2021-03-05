@@ -71,7 +71,6 @@ class Layout extends Component<Props,State> {
     }
 }      
 
-
 const rootStyle: CSSProperties = {
     display: "flex",
     flexDirection: "column",
