@@ -41,25 +41,29 @@ class Layout extends Component<Props,State> {
                                 </Link>
                             </div>
                             <div style={drinkGridStyle}>
-                                {drinkMap.map((data, i)=> (
-                                        <DetailView 
-                                            key={i}
-                                            image={data.strDrinkThumb + "/preview"} 
-                                            drinkTitle={data.strDrink} 
-                                            drinkRecipe={data.strInstructions} 
-                                            ingredients1={data.strIngredient1}
-                                            ingredients2={data.strIngredient2}
-                                            ingredients3={data.strIngredient3}
-                                            ingredients4={data.strIngredient4}
-                                            ingredients5={data.strIngredient5}
-                                            ingredientsAmount={data.strMeasure1}
-                                            ingredientsAmount1={data.strMeasure2}
-                                            ingredientsAmount2={data.strMeasure3}
-                                            ingredientsAmount3={data.strMeasure4}
-                                            ingredientsAmount4={data.strMeasure5}
-                                        />
-                                    ))}
-                            </div>
+                                {drinkMap ?  drinkMap.map((data, i)=> (
+    
+                                    <DetailView 
+                                        key={i}
+                                        image={data.strDrinkThumb + "/preview"} 
+                                        drinkTitle={data.strDrink} 
+                                        drinkRecipe={data.strInstructions} 
+                                        ingredients1={data.strIngredient1}
+                                        ingredients2={data.strIngredient2}
+                                        ingredients3={data.strIngredient3}
+                                        ingredients4={data.strIngredient4}
+                                        ingredients5={data.strIngredient5}
+                                        ingredientsAmount={data.strMeasure1}
+                                        ingredientsAmount1={data.strMeasure2}
+                                        ingredientsAmount2={data.strMeasure3}
+                                        ingredientsAmount3={data.strMeasure4}
+                                        ingredientsAmount4={data.strMeasure5}
+                                             />
+                                        )): [] }
+                           
+                                </div>
+
+                                
                         </ErrorBoundary>
                     </Route>
                 </Switch>
