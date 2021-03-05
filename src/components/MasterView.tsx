@@ -1,22 +1,38 @@
-import React, { Component, CSSProperties } from "react";
-import SearchBar from "./SearchBar";
-import StartPageImage from "./StartPageImage";
-import Buttons from "./Buttons";
-import { Link, RouteComponentProps, withRouter } from "react-router-dom";
+import React, { Component, CSSProperties } from 'react';
+import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
+import SearchBar from './SearchBar';
+import StartPageImage from './StartPageImage';
+import Buttons from './Buttons';
+// import { makeStyles, useTheme } from '@material-ui/core';  
+import Grid from "@material-ui/core/Grid";
+
 interface Props extends RouteComponentProps {
    drink: any[];
+   //    className: string;
+   //    serachBar: any;
    onSearchDrink: (value: []) => void;
 }
 
 interface State {
    searchValue: string;
 }
+
+// const useStyles = makeStyles((theme) => ({
+//     SearchBar: {
+//        width: '12rem',
+//        [theme.breakpoints.down('sm')]: {
+//          width: '8rem',
+//      },
+//     },
+//  }));
+
+ 
 class MasterView extends Component<Props, State> {
    state: State = {
-      searchValue: "",
+      searchValue: '',
    };
 
-   COCKTAILS_URL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+   COCKTAILS_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
 
    async fetchImagesFromApi(searchValue: string) {
       try {
@@ -44,102 +60,52 @@ class MasterView extends Component<Props, State> {
             <div>
                <StartPageImage />
             </div>
-            <div style={searchDiv}>
-               <div>
+            <Grid style={searchDiv}
+                container
+                justify="center"
+                >
+               <Grid item>
                   <SearchBar
+                    //  className={classes.SearchBar}
                      value={this.state.searchValue}
                      onChange={this.handleSearchResult}
                      dropDownList={this.props.drink}
                   />
-               </div>
-               <div style={buttonFlex}>
+               </Grid>
+               <Grid item style={buttonFlex}>
                   <Link to="/search">
                      <Buttons
                         text="Search"
                         handleClick={this.somethingHappens}
                      />
                   </Link>
-               </div>
-            </div>
+               </Grid>
+            </Grid>
          </div>
       );
    }
 }
 
+
+
+// const theme = useTheme();
+// const classes = useStyles();
+
 const rootStyle: CSSProperties = {
-   display: "flex",
-   flex: 1,
-   flexDirection: "column",
-   justifyContent: "center",
-   alignItems: "center",
+   display: 'flex',
+   flexGrow: 1,
+   flexDirection: 'column',
+   justifyContent: 'center',
+   alignItems: 'center',
 };
 
 const searchDiv: CSSProperties = {
-    display: "flex",
-    flexDirection: "row",
+   display: 'flex',
+   flexDirection: 'row',
 };
 
 const buttonFlex: CSSProperties = {
-   display: "flex",
+   display: 'flex',
 };
 
 export default withRouter(MasterView);
-
-// interface DrinksResponse {
-//     drinks: Drinks[],
-// }
-// export interface Drinks {
-//    0: [{
-
-//        strDrinkThumb: string,
-//        strDrink: string,
-//     }]
-
-// }
-
-// interface PexelsResponse {
-//     photos: PexelsPhoto[];
-//   }
-
-//   export interface PexelsPhoto {
-//     photographer: string;
-//     src: {
-//       large2x: string;
-//       large: string;
-//       medium: string;
-//       small: string;
-//     }
-//   }
-
-//     interface Props {}
-// interface State {
-//   images: PexelsPhoto[];
-// }
-
-// class App extends Component<Props, State> {
-//   private readonly API_KEY = '563492ad6f91700001000001e9543e64cc6240f3a18b3b0d9f42629d';
-//   private readonly PEXELS_URL = 'https://api.pexels.com/v1/search'
-
-//   state: State = {
-//     images: []
-//   }
-
-//   handleNewSearchValue = (value: string) => {
-//     this.fetchImagesFromApi(value);
-//   };
-
-//   async fetchImagesFromApi(searchValue: string) {
-//     try {
-//       const url = this.PEXELS_URL + '?query=' + searchValue;
-
-//       const response = await fetch(url, {
-//         headers: { 'Authorization': this.API_KEY }
-//       });
-
-//       const result: PexelsResponse = await response.json();
-//       this.setState({ images: result.photos || [] })
-
-//     } catch (error: unknown) {
-//       console.error(error);
-//     }
-//   }

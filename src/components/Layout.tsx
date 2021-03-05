@@ -1,9 +1,9 @@
 import React, { Component, CSSProperties } from "react";
+import { Link, Route, Switch } from "react-router-dom";
 import DetailView from "./DetailView";
 import MasterView from "./MasterView";
-import Header from "./Header";
-import { Link, Route, Switch } from "react-router-dom";
 import ErrorBoundary from "./ErrorBoundary";
+import Header from "./Header";
 import Buttons from "./Buttons";
 
 interface State {
@@ -11,6 +11,7 @@ interface State {
 }
 
 interface Props {}
+
 class Layout extends Component<Props, State> {
    state: State = {
       drink: [],

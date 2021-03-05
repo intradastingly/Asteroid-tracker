@@ -32,25 +32,26 @@ class SearchBar extends Component<Props, State> {
 }
 
 const searchBox: CSSProperties = {
-   width: "14rem",
+   maxWidth: "12rem",
+//    minWidth: "8rem",
    height: "1.5rem",
    background: "white",
    padding: ".5rem",
    fontSize: "1.5rem",
    border: "none",
    borderRadius: ".5rem",
-   backgroundImage: "none",
-   boxShadow: "none",
    marginBottom: "2rem",
+//    backgroundImage: "none", DEFAULT
+//    boxShadow: "none", DEFAULT
 };
 
 const dropDownListStyle: CSSProperties = {
    position: "fixed",
    border: "none",
    borderRadius: ".5rem",
-   backgroundImage: "none",
-   boxShadow: "none",
    marginBottom: "2rem",
+//    backgroundImage: "none", DEFAULT
+//    boxShadow: "none", DEFAULT
 };
 
 export default SearchBar;
